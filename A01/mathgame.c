@@ -24,7 +24,7 @@ int main() {
         } else {
             printf("Incorrect ;(\n");
         }
-   }
-   printf("You answered %d / %d correctly.\n", numCorrect, numQuestions);
-   return 0;
+    }
+    printf("You answered %d / %d correctly.\n", numCorrect, numQuestions);
+    return 0;
 }
