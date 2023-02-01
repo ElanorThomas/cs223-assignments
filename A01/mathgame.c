@@ -8,7 +8,7 @@
 #include <stdlib.h>
 
 int main() {
-printf("Welcome to math game! How many rounds do you want to play?");
+    printf("Welcome to math game! How many rounds do you want to play?");
     int numQuestions;
     int numCorrect = 0;
     scanf("%d", &numQuestions);
@@ -26,5 +26,5 @@ printf("Welcome to math game! How many rounds do you want to play?");
         }
    }
    printf("You answered %d / %d correctly.\n", numCorrect, numQuestions);
-  return 0;
+   return 0;
 }
