@@ -8,36 +8,30 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
 int main() {
-	int pauseLength = 0;
-    	printf("Pause length:");
-    	scanf("%d", &pauseLength);
-
-    	char buff[32];
-    	
-    	printf("Text:");
-    	scanf(" %31s", buff);
-
-        int m = 0;//given string length
-        while (buff[m] != '\0'){
-            m++;
+    int pauseLength = 0;
+    printf("Pause length:");
+    scanf("%d", &pauseLength);
+    char buff[32];
+    printf("Text:");
+    scanf(" %31s", buff);
+    int m = 0;//given string length
+    while (buff[m] != '\0'){
+        m++;
+    }
+    int newBuffLen = ((pauseLength + 1) * m) + 1;
+    char* newBuff = malloc(newBuffLen * sizeof(char));
+    int i, s;
+    int t = 0;
+    for (i = 0; i < strlen(buff); i++){
+        newBuff[t] = buff[i];
+        for (s = 0; s < pauseLength; s++){
+            newBuff[++t] = '.';
         }
-
-        int newBuffLen = ((pauseLength + 1) * m) + 1;
-        char* newBuff = malloc(newBuffLen * sizeof(char));
-
-   	int i, s;
-    	int t = 0;
-    	for (i = 0; i < strlen(buff); i++){
-       		newBuff[t] = buff[i];
-        	for (s = 0; s < pauseLength; s++){
-            		newBuff[++t] = '.';
-        	}
-        	t++;
-    	}
-    	newBuff[t] = '\0';
-    	printf("%s", newBuff);
-	free(newBuff);
-    	return 0;
+        t++;
+    }
+    newBuff[t] = '\0';
+    printf("%s", newBuff);
+    free(newBuff);
+    return 0;
 }
