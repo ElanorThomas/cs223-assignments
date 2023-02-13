@@ -15,9 +15,17 @@ int main() {
     	scanf("%d", &pauseLength);
 
     	char buff[32];
-    	char* newBuff = malloc(128 * sizeof(char));
+    	
     	printf("Text:");
     	scanf(" %31s", buff);
+
+        int m = 0;//given string length
+        while (buff[m] != '\0'){
+            m++;
+        }
+
+        int newBuffLen = ((pauseLength + 1) * m) + 1;
+        char* newBuff = malloc(newBuffLen * sizeof(char));
 
    	int i, s;
     	int t = 0;
