@@ -21,7 +21,7 @@ int main() {
 
         int m = 0;//given string length
         while (buff[m] != '\0'){
-            m++;
+         	m++;
         }
 
         int newBuffLen = ((pauseLength + 1) * m) + 1;
