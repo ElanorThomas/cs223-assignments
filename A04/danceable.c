@@ -1,7 +1,11 @@
 /*----------------------------------------------
  * Author: Elanor Thomas
  * Date: 2/15/2023
- * Description
+ * Description: program that makes a linked list of 
+ * songs and all their data, as well as enabling 
+ * one query, the song with the highest 
+ * 'danceability' rating. After returning
+ * said song, the song is removed from list
  ---------------------------------------------*/
 #include <stdio.h>
 #include <string.h>
