@@ -34,21 +34,29 @@ int main(int argc, char** argv) {
 
     char buff[1024];
     printf("Enter a message: ");
-    scanf(" %s", buff);//instead of %31s
+    scanf(" %s", buff);//instead of %31s - ALSO i believe this contains the null character
+
     
     printf("Writing file %s\n", newFileName);
     
     int len = strlen(buff);
-    short* bits = (short*) malloc(len * 8 * sizeof(short));
+    // printf("YEE%d", len);
+    short* bits = (short*) malloc((len + 1) * 8 * sizeof(short));
+    int s;
+    for (s = 8; s > 0; s--){
+        bits[((len + 1) * 8) - s] = 0;
+    }
+    
     int count  = 0;
     
+    //This is to make the array of bits, called bits, to represent the message given
     int i;
     for (i = 0; i < len; i++){
         int givChar = buff[i];
         int j;
         for (j = 7; j >= 0; j--){
-            int givBit = (int)(givChar / pow(2, j));
-            givChar -= (givBit * pow(2, j));
+            int givBit = (int)(givChar / (1 << j));
+            givChar -= (givBit * (1 << j));
             bits[count] = givBit;
             count++;
         }
@@ -56,13 +64,15 @@ int main(int argc, char** argv) {
 
     int t;
     int bitCount = 0;
-    int totalBits = len * 8;
+    int totalBits = (len + 1) * 8;
 
     for (t = 0; t < w * h; t++){//this is for looping through the pixels
+    // for (t = 0; t < len * 8; t++){
+        //doing len * 8 instead of w * h should have the same effect as only writing the number of bits necessary
         if (bitCount < totalBits){
-            if (bits[bitCount] == 0){
+            if (bits[bitCount] == 0){//if the value is 0, clear the last bit
                 pixels[t].red &= ~(0x1ul);
-            } else {
+            } else { //otherwise, set the last bit
                 pixels[t].red |= 0x1ul;
             }
             bitCount++;
@@ -92,6 +102,10 @@ int main(int argc, char** argv) {
             break;
         }
         
+    }
+
+    for (int a = 0; a < (len + 1) * 8; a++){
+        printf("%d, ", bits[a]);
     }
 
     // for (i = 0; i < w*h; i++) {

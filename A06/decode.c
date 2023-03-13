@@ -36,10 +36,14 @@ int main(int argc, char** argv) {
 
     for (j = 0; j < (w * h * 3); j++){
         if (pixelsChar[j] & 0x1ul){
-            subSum += pow(2, subCount);
+            subSum += (1 << subCount);
+            // subSum += pow(2, subCount);
         }
         subCount--;
         if (subCount < 0){
+            if (subSum == 0){
+                break;
+            }
             printf("%c", subSum);
             subCount = 7;
             subSum = 0;

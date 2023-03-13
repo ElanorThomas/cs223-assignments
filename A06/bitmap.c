@@ -7,10 +7,11 @@
  ---------------------------------------------*/
 #include <stdio.h>
 
-int main() {
+int main(int argc, char** argv) {
     unsigned long img;
     FILE* filePtr;
-    filePtr = fopen("bitmap3.txt", "r");//deref fileName?
+    // filePtr = fopen("bitmap3.txt", "r");
+    filePtr = fopen(argv[1], "r");
     if(filePtr == NULL) {
         perror("Error opening file");
         return 0;
