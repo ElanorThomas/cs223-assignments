@@ -1,3 +1,13 @@
+/*----------------------------------------------
+ * Author: Elanor Thomas
+ * Date: Mar 21 2023
+ * Description: This file contains the main method of
+ * a mandelbrot set visualization program. This program
+ * writes a new file, with a name including the current time
+ * in order to differentiate file names. It also takes in
+ * size and minimum and maximum x and y values, should 
+ * the use choose to include them
+ ---------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -70,7 +80,6 @@ int main(int argc, char* argv[]) {
     }
 
     //TIMING STARTS HERE
-    // time_t begin = time(0);
     struct timeval tstart, tend;
     gettimeofday(&tstart, NULL);
 
@@ -78,9 +87,6 @@ int main(int argc, char* argv[]) {
     for (i = 0; i < size; i++) {//for each row
         for (j = 0; j < size; j++) {//for each column
             float xfrac = (float)i / (float)size;
-            // if (i < 2 && j < 2){
-            //     printf("%f ", xfrac);
-            // }
             
             float yfrac = (float)j / (float)size;
             float x0 = xmin + xfrac * (xmax - xmin);
@@ -114,13 +120,9 @@ int main(int argc, char* argv[]) {
     write_ppm_2d(newFileName, mandelImage, size, size);
 
     //TIMING ENDS HERE
-    //since the image had been generated and written
-
+    //since the image has now been generated and written
     
     gettimeofday(&tend, NULL);
-
-    // time_t end = time(0);
-    // printf("The elapsed time is %ld seconds", (end - begin));
     double timer = tend.tv_sec - tstart.tv_sec + (tend.tv_usec - tstart.tv_usec)/1.e6;
     printf("Computed mandelbrot set (%dx%d) in %g seconds.\n", size, size, timer);
 

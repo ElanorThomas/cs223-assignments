@@ -1,3 +1,10 @@
+
+/*----------------------------------------------
+ * Author: Elanor Thomas
+ * Date: Mar 21 2023
+ * Description: This file allows the programmer to
+ * read a given ppm file
+ ---------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

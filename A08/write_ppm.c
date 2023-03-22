@@ -1,3 +1,9 @@
+/*----------------------------------------------
+ * Author: Elanor Thomas
+ * Date: Mar 21 2023
+ * Description: This file allows the programmer to
+ * write to a ppm file of their choice
+ ---------------------------------------------*/
 #include "write_ppm.h"
 #include <stdio.h>
 #include <string.h>
