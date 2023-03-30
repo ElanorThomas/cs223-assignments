@@ -87,7 +87,6 @@ int main(int argc, char* argv[]) {
     for (i = 0; i < size; i++) {//for each row
         for (j = 0; j < size; j++) {//for each column
             float xfrac = (float)i / (float)size;
-            
             float yfrac = (float)j / (float)size;
             float x0 = xmin + xfrac * (xmax - xmin);
             float y0 = ymin + yfrac * (ymax - ymin);
