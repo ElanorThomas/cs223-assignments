@@ -10,6 +10,9 @@ thread_mandelbrot: thread_mandelbrot.c read_ppm.c write_ppm.c
 buddhabrot: buddhabrot.c read_ppm.c write_ppm.c
 	$(CC) -g -Wall -Wvla -Werror -Wno-unused-variable buddhabrot.c read_ppm.c write_ppm.c -o $@ -lm -lpthread
 
+buddhabrotNT: buddhabrotNT.c read_ppm.c write_ppm.c
+	$(CC) -g -Wall -Wvla -Werror -Wno-unused-variable buddhabrotNT.c read_ppm.c write_ppm.c -o $@ -lm -lpthread
+
 clean: 
 	rm thread_mandelbrot buddhabrot search
 
