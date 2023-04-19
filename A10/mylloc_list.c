@@ -1,3 +1,18 @@
+/*----------------------------------------------
+ * Author: Elanor Thomas
+ * Base code from Aline Normoyle and Johan Montelius
+ * Date: Apr 19 2023
+ * Description: This file contains a homemade
+ * implementation of the malloc method in c.
+ * It is a greatly simplified version.
+ * The malloc method checks if there is a block
+ * of memory in the freed list  that is big
+ * enough to hold the new piece of data, allocating
+ * new space if there is not. The free method
+ * simply takes a piece of memory and adds it
+ * to the linked list storing freed blocks of
+ * memory.
+ ---------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>

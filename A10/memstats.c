@@ -1,3 +1,17 @@
+/*----------------------------------------------
+ * Author: Elanor Thomas
+* Base code from Aline Normoyle
+ * Date: Apr 19 2023
+ * Description: This file contains the memstats method,
+ * which examines the memory in use and in the freed
+ * memory linked list at the time of calling, and
+ * prints a number of statistics on the data, such as
+ * the total amount of memory allocated and in use,
+ * the total number of blocks of memory allocated and
+ * in use, and the percent of memory in the buffer
+ * that is not being utilized
+ ---------------------------------------------*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
