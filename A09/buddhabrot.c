@@ -1,3 +1,17 @@
+/*----------------------------------------------
+ * Author: Elanor Thomas
+ * Date: Mar 12 2023
+ * Description: This file contains the main method of
+ * a buddhabrot visualization program. The method
+ * writes a new file, with a name including the current time
+ * in order to differentiate file names. It also takes in
+ * size and minimum and maximum x and y values, should 
+ * the user choose to include them.
+ * The program uses a custom buddhabrotData object
+ * passed to the buddhabrotThread method in order to
+ * generate the visualization using multiple different
+ * threads, saving time in  theory.
+ ---------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
